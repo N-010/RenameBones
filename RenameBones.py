@@ -1,0 +1,62 @@
+import bpy
+context = bpy.context
+obj = context.object
+
+namelist = [("mixamorig:Hips", "Pelvis"),
+			("mixamorig:Spine", "spine_01"),
+			("mixamorig:Spine1", "spine_02"),
+			("mixamorig:Spine2", "spine_03"),
+			("mixamorig:LeftShoulder", "clavicle_l"),
+			("mixamorig:LeftArm", "UpperArm_L"),
+			("mixamorig:LeftForeArm", "lowerarm_l"),
+			("mixamorig:LeftHand", "Hand_L"),
+			("mixamorig:LeftHandIndex1", "index_01_l"),
+			("mixamorig:LeftHandIndex2", "index_02_l"),
+			("mixamorig:LeftHandIndex3", "index_03_l"),
+			("mixamorig:LeftHandMiddle1", "middle_01_l"),
+			("mixamorig:LeftHandMiddle2", "middle_02_l"),
+			("mixamorig:LeftHandMiddle3", "middle_03_l"),
+			("mixamorig:LeftHandPinky1", "pinky_01_l"),
+			("mixamorig:LeftHandPinky2", "pinky_02_l"),
+			("mixamorig:LeftHandPinky3", "pinky_03_l"),
+			("mixamorig:LeftHandRing1", "ring_01_l"),
+			("mixamorig:LeftHandRing2", "ring_02_l"),
+			("mixamorig:LeftHandRing3", "ring_03_l"),
+			("mixamorig:LeftHandThumb1", "thumb_01_l"),
+			("mixamorig:LeftHandThumb2", "thumb_02_l"),
+			("mixamorig:LeftHandThumb3", "thumb_03_l"),
+			("mixamorig:RightShoulder", "clavicle_r"),
+			("mixamorig:RightArm", "UpperArm_R"),
+			("mixamorig:RightForeArm", "lowerarm_r"),
+			("mixamorig:RightHand", "Hand_R"),
+			("mixamorig:RightHandIndex1", "index_01_r"),
+			("mixamorig:RightHandIndex2", "index_02_r"),
+			("mixamorig:RightHandIndex3", "index_03_r"),
+			("mixamorig:RightHandMiddle1", "middle_01_r"),
+			("mixamorig:RightHandMiddle2", "middle_02_r"),
+			("mixamorig:RightHandMiddle3", "middle_03_r"),
+			("mixamorig:RightHandPinky1", "pinky_01_r"),
+			("mixamorig:RightHandPinky2", "pinky_02_r"),
+			("mixamorig:RightHandPinky3", "pinky_03_r"),
+			("mixamorig:RightHandRing1", "ring_01_r"),
+			("mixamorig:RightHandRing2", "ring_02_r"),
+			("mixamorig:RightHandRing3", "ring_03_r"),
+			("mixamorig:RightHandThumb1", "thumb_01_r"),
+			("mixamorig:RightHandThumb2", "thumb_02_r"),
+			("mixamorig:RightHandThumb3", "thumb_03_r"),
+			("mixamorig:Neck", "neck_01"),
+			("mixamorig:Head", "head"),
+			("mixamorig:LeftUpLeg", "Thigh_L"),
+			("mixamorig:LeftLeg", "calf_l"),
+			("mixamorig:LeftFoot", "Foot_L"),
+			("mixamorig:LeftToeBase", "ball_l"),
+			("mixamorig:RightUpLeg", "Thigh_R"),
+			("mixamorig:RightLeg", "calf_r"),
+			("mixamorig:RightFoot", "Foot_R"),
+			("mixamorig:RightToeBase", "ball_r")]
+
+for name, newname in namelist:
+    pb = obj.pose.bones.get(name)
+    if pb is None:
+        continue
+    pb.name = newname       
